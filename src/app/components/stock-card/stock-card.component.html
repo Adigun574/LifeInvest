@@ -1,0 +1,14 @@
+<div class="stock-card">
+    <div class="stock-header">
+        <h2>{{stock.symbol}}</h2>
+        <span class="price">${{stock.close}}</span>
+    </div>
+    <div class="stock-details">
+        <p><strong>Change:</strong> <span class="change positive"> {{stock.change}}%</span></p>
+        <p><strong>Volume:</strong> {{stock.volume}}</p>
+        <div class="stock-detail-view-container">
+            <p><strong>Market Cap:</strong> $2.5T</p>
+            <p class="view" (click)="viewStock(stock)">View</p>
+        </div>
+    </div>
+</div>

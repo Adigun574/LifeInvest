@@ -1,0 +1,21 @@
+@if(loading){
+<app-loader></app-loader>
+}
+<div class="container">
+    <h1>Stock Price Tracker</h1>
+    <form [formGroup]="searchForm">
+        <div class="search-bar">
+            <input type="text" placeholder="Search for a stock (e.g., AAPL)" formControlName="searchKey" />
+            <button (click)="search()">Search
+                @if(searching){
+                <app-spinner></app-spinner>
+                }
+            </button>
+        </div>
+    </form>
+    <div class="stock-list">
+        @for (stock of stocks; track stock.symbol) {
+        <app-stock-card [stock]="stock"></app-stock-card>
+        }
+    </div>
+</div>
