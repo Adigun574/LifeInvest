@@ -1,0 +1,56 @@
+.stock-card {
+    background-color: #17181B;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .stock-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .stock-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .stock-header h2 {
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+  .stock-header .price {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #27ae60;
+  }
+  
+  .stock-details p {
+    margin: 8px 0;
+    font-size: 1rem;
+    color: white;
+  }
+  
+  .stock-details .change {
+    font-weight: 500;
+  }
+  
+  .stock-details .positive {
+    color: #27ae60;
+  }
+  
+  .stock-details .negative {
+    color: #e74c3c;
+  }
+  
+  .stock-detail-view-container{
+    display: flex;
+    justify-content: space-between;
+    .view{
+      cursor: pointer;
+    }
+  }

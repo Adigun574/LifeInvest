@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css?family=Outfit:700|Poppins:400");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins";
+}
+
+.stock-details-page {
+  min-height: 100vh;
+  width: 100%;
+  color: hsl(0, 0%, 89%);
+  padding: 2rem 10vw 5rem 10vw;
+  background: hsl(0, 0%, 6%);
+}
+
+.back-navigation{
+  margin-bottom: 40px;
+}
+
+.stock-details-container{
+  width: 100%;
+  display: flex;
+  overflow-x: hidden;
+  font-weight: 400;
+  color: hsl(0, 0%, 89%);
+  gap: 2rem;
+  background: hsl(0, 0%, 6%);
+}
+
+svg {
+  fill: hsl(0, 0%, 89%);
+  height: 1lh;
+  width: 1lh;
+  vertical-align: middle;
+  align-self: center;
+}
+
+svg.small {
+  font-size: 0.8rem;
+  transition: 0.2s ease-in-out;
+}
+
+svg.small:hover {
+  fill: #e2eafc;
+  transform: scale(1.1);
+}
+
+button {
+  color: hsl(0, 0%, 89%);
+  border-radius: 0.25rem;
+  border: none;
+  background: none;
+  font-size: 0.9rem;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  background: hsla(222.14, 100%, 83.53%, 0.05);
+  color: hsl(0, 0%, 89%);
+  border: none;
+}
+
+.stocks-listing-container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex-basis: 20%;
+  min-width: 18rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  flex-basis: 80%;
+}
+
+.primary {
+  background: #ccdbfd;
+  color: hsl(0, 0%, 6%);
+}
+
+.secondary {
+  background: hsla(222.14, 100%, 83.53%, 0.05);
+}
+
+.positive {
+  color: #80ed99;
+  fill: #80ed99;
+}
+
+.negative {
+  color: #FF6863;
+  fill: #FF6863;
+}
+
+.muted {
+  color: hsla(0, 0%, 89%, 0.5);
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.top {
+  align-self: start;
+}
+
+.search-items {
+  overflow-y: scroll;
+  height: 13rem;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .stock-details-container{
+    flex-direction: column-reverse;
+  }
+}

@@ -1,1 +1,58 @@
-<p>stock-details works!</p>
+@if(loading){
+<app-loader></app-loader>
+}
+<div class="stock-details-page">
+
+    <div class="back-navigation">
+        <p class="cursor-pointer" (click)="goBack()">
+            < Back</p>
+    </div>
+    <div class="stock-details-container">
+        <div class="stocks-listing-container">
+            <div class="secondary container">
+                <input placeholder="Search for a stock">
+                <div class="column search-items">
+                    @for(stock of stocks; track stock.symbol){
+                    <div class="row space-between">
+                        <button>{{stock.symbol}}</button>
+                        <svg class="small positive"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <path
+                                d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" />
+                        </svg>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <main class="secondary gp-1">
+            <div class="row space-between">
+                <div>
+                    <h2>{{symbol}}</h2>
+                    <p class="positive">UP 2.34%</p>
+                </div>
+                <svg class="top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path
+                        d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z" />
+                </svg>
+            </div>
+            <div>
+                @if(chartOptions){
+                <div id="chart">
+                    <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
+                        [dataLabels]="chartOptions.dataLabels" [grid]="chartOptions.grid" [stroke]="chartOptions.stroke"
+                        [title]="chartOptions.title"></apx-chart>
+                </div>
+                }
+            </div>
+            <div>
+                <div class="row space-between">
+                    <div>
+                        <h4>$152.23 <span class="positive">(+$2.23)</span></h4>
+                        <p class="muted">Last 50 Days of Data</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IApiResponse } from '../models/IApiResponse.model';
-import { IStock } from '../models/stock.model';
+import { IApiParams, IStock, IStockGlobalQuote } from '../models/stock.model';
 import { Endpoints } from '../constants/endpoints';
 
 @Injectable({
@@ -14,16 +14,17 @@ export class StockService {
     private http: HttpClient
   ) { }
 
-  getStocksData(params?: any): Observable<IApiResponse<IStock>> {
-    return this.http.get<IApiResponse<IStock>>(Endpoints.fetch_stocks_data, {params})
+  getStocksData(params?: IApiParams): Observable<IApiResponse<IStock[]>> {
+    return this.http.get<IApiResponse<IStock[]>>(Endpoints.fetch_stocks_data, {params})
   }
 
-  fetchIntraDayData(params?: any){
+  fetchSingleStockData(params?: IApiParams):Observable<IStockGlobalQuote> {
+    return this.http.get<IStockGlobalQuote>(Endpoints.fetch_stocks_data, {params})
+  }
+
+  fetchStockIntraDayData(params?: IApiParams){
     return this.http.get(Endpoints.fetch_stocks_data, {params})
   }
 
-  fetchSingleStockData(params?: any){
-    return this.http.get(Endpoints.fetch_stocks_data, {params})
-  }
   
 }
