@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Outfit:700|Poppins:400");
+@import 'ngx-toastr/toastr';
+
+
+* {
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
