@@ -74,7 +74,7 @@ export class StocksListComponent {
     const symbol: string = this.searchFormData['searchKey'].value
     if(symbol){
       this.searching = true
-        this.stockService.fetchSingleStockData({symbol})
+        this.stockService.fetchSingleStockData({function: 'GLOBAL_QUOTE', symbol})
         .pipe(takeUntil(this.destroy$))
         .subscribe({
         next: (response: Partial<IStockGlobalQuote>) => {
